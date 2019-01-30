@@ -1,6 +1,7 @@
 click==6.7
-dragnet==2.0.3
 jsonlines==1.2.0
+lxml==4.2.2
 pandas==0.23.4
 requests==2.19.1
 tqdm==4.24.0
+
