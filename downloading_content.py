@@ -6,7 +6,6 @@ import click
 import jsonlines
 import pandas as pd
 import requests
-from dragnet import Blockifier, BlockifyError
 from lxml import html
 from tqdm import tqdm
 
@@ -100,3 +99,11 @@ def extract_contact(url):
             return contacts_found
     except requests.exceptions.RequestException as e:
         return
+
+
+# for getting the arguments
+@click.command()
+@click.argument('data_directory', type=Path)
+@click.argument('output_file', type=Path)
+def entrypoint(data_directory, output_file):
+    extract(data_directory, output_file)
